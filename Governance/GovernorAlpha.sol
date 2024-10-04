@@ -6,10 +6,10 @@ contract GovernorAlpha {
     string public constant name = "Financeound Governor Alpha";
 
     /// @notice The number of votes in support of a proposal required in order for a quorum to be reached and for a vote to succeed
-    function quorumVotes() public pure returns (uint) { return 400000e18; } // 400,000 = 4% of Finance
+    function quorumVotes() public pure returns (uint) { return 4000000e18; } // 4,000,000 = 4% of Finance
 
     /// @notice The number of votes required in order for a voter to become a proposer
-    function proposalThreshold() public pure returns (uint) { return 100000e18; } // 100,000 = 1% of Finance
+    function proposalThreshold() public pure returns (uint) { return 1000000e18; } // 1,000,000 = 1% of Finance
 
     /// @notice The maximum number of actions that can be included in a proposal
     function proposalMaxOperations() public pure returns (uint) { return 10; } // 10 actions
