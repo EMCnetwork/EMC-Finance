@@ -15,16 +15,16 @@ contract GovernorBravoDelegate is GovernorBravoDelegateStorageV1, GovernorBravoE
     uint public constant MAX_PROPOSAL_THRESHOLD = 1000000e18; //1,000,000 Finance
 
     /// @notice The minimum setable voting period
-    uint public constant MIN_VOTING_PERIOD = 5760; // About 24 hours
+    uint public constant MIN_VOTING_PERIOD = 43200; // About 24 hours
 
     /// @notice The max setable voting period
-    uint public constant MAX_VOTING_PERIOD = 80640; // About 2 weeks
+    uint public constant MAX_VOTING_PERIOD = 604800; // About 2 weeks
 
     /// @notice The min setable voting delay
     uint public constant MIN_VOTING_DELAY = 1;
 
     /// @notice The max setable voting delay
-    uint public constant MAX_VOTING_DELAY = 40320; // About 1 week
+    uint public constant MAX_VOTING_DELAY = 302400; // About 1 week
 
     /// @notice The number of votes in support of a proposal required in order for a quorum to be reached and for a vote to succeed
     uint public constant quorumVotes = 4000000e18; // 4,000,000 = 4% of Finance
