@@ -41,7 +41,7 @@ contract GovernorBravoDelegate is GovernorBravoDelegateStorageV1, GovernorBravoE
     /**
       * @notice Used to initialize the contract during delegator constructor
       * @param timelock_ The address of the Timelock
-      * @param finance_ The address of the COMP token
+      * @param finance_ The address of the EMC token
       * @param votingPeriod_ The initial voting period
       * @param votingDelay_ The initial voting delay
       * @param proposalThreshold_ The initial proposal threshold

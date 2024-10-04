@@ -272,7 +272,7 @@ contract FinanceLens {
         address underlyingAssetAddress;
         uint underlyingDecimals;
 
-        if (financeareStrings(cToken.symbol(), "efEMC")) {
+        if (compareStrings(cToken.symbol(), "efEMC")) {
             underlyingAssetAddress = address(0);
             underlyingDecimals = 18;
         } else {
@@ -344,7 +344,7 @@ contract FinanceLens {
         uint tokenBalance;
         uint tokenAllowance;
 
-        if (financeareStrings(cToken.symbol(), "efEMC")) {
+        if (compareStrings(cToken.symbol(), "efEMC")) {
             tokenBalance = account.balance;
             tokenAllowance = account.balance;
         } else {
@@ -371,7 +371,7 @@ contract FinanceLens {
         address underlyingAssetAddress;
         uint underlyingDecimals;
 
-        if (financeareStrings(cToken.symbol(), "efEMC")) {
+        if (compareStrings(cToken.symbol(), "efEMC")) {
             underlyingAssetAddress = address(0);
             underlyingDecimals = 18;
         } else {
@@ -661,7 +661,7 @@ contract FinanceLens {
         return res;
     }
 
-    function financeareStrings(string memory a, string memory b) internal pure returns (bool) {
+    function compareStrings(string memory a, string memory b) internal pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
     }
 

@@ -43,7 +43,7 @@ contract FinancePriceOracle is PriceOracle {
     }
 
     function setDirectPrice(address asset, uint price) public {
-        require(whitelisted[msg.sender], "Asset not whitelisted");
+        require(whitelisted[msg.sender], "Caller is not whitelisted for setting asset price");
         emit PricePosted(asset, prices[asset], price, price);
         prices[asset] = price;
     }
