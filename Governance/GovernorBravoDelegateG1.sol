@@ -12,7 +12,7 @@ contract GovernorBravoDelegate is GovernorBravoDelegateStorageV1, GovernorBravoE
     uint public constant MIN_PROPOSAL_THRESHOLD = 50000e18; // 50,000 Finance
 
     /// @notice The maximum setable proposal threshold
-    uint public constant MAX_PROPOSAL_THRESHOLD = 100000e18; //100,000 Finance
+    uint public constant MAX_PROPOSAL_THRESHOLD = 1000000e18; //1,000,000 Finance
 
     /// @notice The minimum setable voting period
     uint public constant MIN_VOTING_PERIOD = 5760; // About 24 hours
