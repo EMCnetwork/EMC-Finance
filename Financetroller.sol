@@ -14,6 +14,8 @@ import "./Governance/Finance.sol";
  * @author Finance
  */
 contract Financetroller is FinancetrollerV7Storage, FinancetrollerInterface, FinancetrollerErrorReporter, ExponentialNoError {
+    address  public FinanceAddress;
+
     /// @notice Emitted when an admin supports a market
     event MarketListed(CToken cToken);
 
@@ -1462,14 +1464,7 @@ contract Financetroller is FinancetrollerV7Storage, FinancetrollerInterface, Fin
     }
 
 
-    address FinanceAddress;
-    /**
-     * @notice Return the address of the COIN token
-     * @return The address of COIN
-     */
-    function getFinanceAddress() virtual public view returns (address) {
-        return FinanceAddress;
-    }
+   
 
     function setFinanceAddress(address _FinanceAddress) virtual public {
         require(adminOrInitializing(), "only admin can set finance");

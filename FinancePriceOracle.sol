@@ -6,7 +6,7 @@ import "./CErc20.sol";
 import "./FinancetrollerStorage.sol";
 
 contract FinancePriceOracle is PriceOracle {
-    mapping(address => uint) prices;
+    mapping(address => uint) public prices;
     mapping(address => bool) public whitelisted; 
     address public admin; 
     event WhitelistUpdated(address asset, bool isWhitelisted); 
@@ -60,10 +60,6 @@ contract FinancePriceOracle is PriceOracle {
         emit WhitelistUpdated(asset, false); 
     }
 
-    // v1 price oracle interface for use as backing of proxy
-    function assetPrices(address asset) external view returns (uint) {
-        return prices[asset];
-    }
 
     function financeareStrings(string memory a, string memory b) internal pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
