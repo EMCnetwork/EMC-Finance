@@ -103,9 +103,7 @@ interface GovernorBravoInterface {
 
 contract FinanceLens {
     uint public constant BLOCKS_PER_DAY = 43200;
-    struct Double {
-        uint mantissa;
-    }
+ 
     struct PendingReward {
         address cTokenAddress;
         uint256 amount;
@@ -765,13 +763,11 @@ contract FinanceLens {
             cTokens: cTokensRes
         });
     }
-    struct Exp {
-        uint mantissa;
-    }
-     mapping(address => FinanceMarketState) public financeSupplyState;
-     mapping(address => mapping(address => uint)) public financeSupplierIndex;
+  
+    // mapping(address => FinanceMarketState) public financeSupplyState;
+    // mapping(address => mapping(address => uint)) public financeSupplierIndex;
      
-    uint224 public constant financeInitialIndex = 1e36;
+    // uint224 public constant financeInitialIndex = 1e36;
     
     function pendingRewards(
         address holder,
