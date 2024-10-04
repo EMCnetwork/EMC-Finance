@@ -1326,12 +1326,17 @@ contract FinancetrollerG7 is FinancetrollerV5Storage, FinancetrollerInterface, F
     function getBlockNumber() public view returns (uint) {
         return block.number;
     }
-
+    address FinanceAddress;
     /**
      * @notice Return the address of the COIN token
      * @return The address of COIN
      */
     function getFinanceAddress() public view returns (address) {
-        // return 0xc00e94Cb662C3520282E6f5717214004A7f26888;
+        return FinanceAddress;
+    }
+
+    function setFinanceAddress(address _FinanceAddress) virtual public {
+        require(adminOrInitializing(), "only admin can set finance");
+        FinanceAddress = _FinanceAddress;
     }
 }
