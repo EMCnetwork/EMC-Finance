@@ -2,6 +2,7 @@
 pragma solidity ^0.8.10;
 
 import "./CToken.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 
 /**
  * @title Finance's CEther Contract
@@ -147,6 +148,6 @@ contract CEther is CToken {
 
     function doTransferOut(address payable to, uint amount) virtual override internal {
         /* Send the Ether, with minimal gas and revert on failure */
-        to.transfer(amount);
+        Address.sendValue(payable(to), amount);
     }
 }
