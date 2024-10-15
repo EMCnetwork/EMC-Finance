@@ -17,7 +17,7 @@ contract FinancePriceOracle is PriceOracle {
     }
     function _getUnderlyingAddress(CToken cToken) private view returns (address) {
         address asset;
-        if (financeareStrings(cToken.symbol(), "efEMC")) {
+        if (compareStrings(cToken.symbol(), "efEMC")) {
             asset = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
         } else {
             asset = address(CErc20(address(cToken)).underlying());
@@ -61,7 +61,7 @@ contract FinancePriceOracle is PriceOracle {
     }
 
 
-    function financeareStrings(string memory a, string memory b) internal pure returns (bool) {
+    function compareStrings(string memory a, string memory b) internal pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
     }
 }
